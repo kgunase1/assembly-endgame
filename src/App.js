@@ -11,7 +11,6 @@ function App() {
 
   const [currentWord, setCurrentWord] = useState(getRandomWord)
   const { width, height } = useWindowSize()
-  console.log(currentWord)
   const [guessedLetters, setGuessedLetters] = useState([])
   const alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
@@ -49,7 +48,6 @@ function App() {
     const isGuessed = guessedLetters.includes(char)
     const isCorrect = isGuessed && currentWord.includes(char)
     const isWrong = isGuessed && !currentWord.includes(char)
-    console.log(isWrong)
     const className = clsx({
       correct: isCorrect,
       wrong: isWrong
